@@ -6,8 +6,10 @@ Given a string text, return true if it is a palindrome, or false otherwise.
 For this question, letters are NOT case-sensitive, for example, "LEVeL" is a palindrome.
 """
 # Change this function so it works correctly
+import re
 def is_palindrome(text):
-    return False
+    clean_text = re.sub(r'[^a-zA-Z0-9]', '', text).lower()
+    return clean_text == clean_text[::-1]
 
 
 if __name__ == '__main__':
